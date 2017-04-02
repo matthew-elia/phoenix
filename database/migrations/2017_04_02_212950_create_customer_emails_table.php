@@ -15,7 +15,7 @@ class CreateCustomerEmailsTable extends Migration
     {
         Schema::create('customer_emails', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
             $table->string('type');
             $table->string('email_address');
             $table->boolean('default')->nullable();
