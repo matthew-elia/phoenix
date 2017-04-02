@@ -13,7 +13,15 @@ class CreateCustomersTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('customers', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->foreign('email_id')->references('id')->on('customer_emails');
+            $table->foreign('phone_id')->references('id')->on('customer_phones');
+            $table->foreign('address_id')->references('id')->on('customer_addresses');
+            $table->timestamps();
+        });
     }
 
     /**

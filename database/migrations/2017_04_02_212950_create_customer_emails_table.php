@@ -13,7 +13,15 @@ class CreateCustomerEmailsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('customer_emails', function (Blueprint $table) {
+            $table->increments('id');
+            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->string('type');
+            $table->string('email_address');
+            $table->boolean('default')->nullable();
+            $table->timestamps();
+        });
+
     }
 
     /**
