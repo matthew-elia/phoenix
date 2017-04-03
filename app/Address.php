@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Address extends Model
 {
+
+    protected $table = 'customer_addresses';
+
      /**
      * Get the customer that owns the address.
      */

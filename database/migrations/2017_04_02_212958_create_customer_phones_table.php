@@ -17,8 +17,8 @@ class CreateCustomerPhonesTable extends Migration
             $table->increments('id');
             $table->integer('customer_id')->unsigned();
             $table->string('type');
-            $table->integer('number');
-            $table->integer('extension')->nullable();
+            $table->string('number');
+            $table->string('extension')->nullable();
             $table->boolean('default')->nullable();
             $table->timestamps();
         });
