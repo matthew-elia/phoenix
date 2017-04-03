@@ -17,9 +17,9 @@ class CreateCustomersTable extends Migration
             $table->increments('id');
             $table->string('first_name');
             $table->string('last_name');
-            $table->foreign('email_id')->references('id')->on('customer_emails')->onDelete('cascade');
-            $table->foreign('phone_id')->references('id')->on('customer_phones')->onDelete('cascade');
-            $table->foreign('address_id')->references('id')->on('customer_addresses')->onDelete('cascade');
+            $table->integer('email_id')->unsigned();
+            $table->integer('phone_id')->unsigned();
+            $table->integer('address_id')->unsigned();
             $table->timestamps();
         });
     }
